@@ -1,0 +1,41 @@
+@startuml
+
+class Patient {
+    - id: String
+    - name: String
+    - birthDate: Date
+    - gender: char
+    - weight: double
+    - height: double
+    - address: String
+    - images: List<Image>
+    - diseases: List<Disease>
+    
+    + addImage(img: Image): void
+    + addDisease(disease: Disease): void
+    + getDetails(): String
+}
+
+class Image {
+    - fileName: String
+    - date: Date
+    - type: String
+    - comments: String
+
+    + getDetails(): String
+}
+
+class Disease {
+    - name: String
+    - date: Date
+    - treatment: String
+
+    + getHistory(): String
+}
+
+Patient "1" --> "*" Image : has
+Patient "1" --> "*" Disease : has
+
+@enduml
+
+//www.plantuml.com/plantuml/png/ZPB1IiD048RlUOeXfrRfmUiYfOSU54G4ds3Q7JS3knlPcIX5V7UJE8qqvj0Sbkmt_ym_-SbE58jsALRLCQ88lA0oPOMl2lfd0-mTl6hX70naJ3H31oxQx55xFfn60sLFnS6nmMBeapWqwi2ttI6UTSqIHEyBYSoCE66W7ZwnwFtZSDbQnRCGobJRZrUhZiVjC79iMN4A3iRNjOEFblsVmFfMDiw1WKjX8DsJ8aTPhQSDlot1tybJVcySwVb_P7wUbfxUvvfZcn9bbGbVPMyRJmlaQymBeGvU2rOFBDgMqwNL-I-fxshORBPGtzJstGuQbCMwBMQAQaVPTod-0000
