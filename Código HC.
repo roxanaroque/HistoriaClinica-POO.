@@ -1,0 +1,78 @@
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+class Patient {
+    private String ID;
+    private String name;
+    private Date birthDate;
+    private char gender;
+    private double weight;
+    private double height;
+    private String address;
+    private List<Image> images;
+    private List<Disease> diseases;
+
+    public Patient(String ID, String name, Date birthDate, char gender, double weight, double height, String address) {
+        this.ID = ID;
+        this.name = name;
+        this.birthDate = birthDate;
+        this.gender = gender;
+        this.weight = weight;
+        this.height = height;
+        this.address = address;
+        this.images = new ArrayList<>();
+        this.diseases = new ArrayList<>();
+    }
+
+    public void addImage(Image img) {
+        images.add(img);
+    }
+
+    public void addDisease(Disease disease) {
+        diseases.add(disease);
+    }
+
+    public String getData() {
+        return "ID: " + ID + "\nName: " + name + "\nWeight: " + weight + "kg\nHeight: " + height + "m";
+    }
+}
+
+class Image {
+    private String fileName;
+    private Date date;
+    private String type;
+    private String comments;
+
+    public Image(String fileName, Date date, String type, String comments) {
+        this.fileName = fileName;
+        this.date = date;
+        this.type = type;
+        this.comments = comments;
+    }
+
+    public String getDetails() {
+        return "Image: " + fileName + "\nType: " + type + "\nDate: " + date;
+    }
+}
+
+class Disease {
+    private String name;
+    private Date date;
+    private String treatment;
+
+    public Disease(String name, Date date, String treatment) {
+        this.name = name;
+        this.date = date;
+        this.treatment = treatment;
+    }
+
+    public String getHistory() {
+        return "Disease: " + name + "\nDate: " + date + "\nTreatment: " + treatment;
+    }
+}
+
+public class MedicalHistory {
+    public static void main(String[] args) {
+    }
+}
